@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartPrep AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>SmartPrep AI</h1>
+        <p>Your Personal Study Assistant</p>
+
+        <form method="POST">
+            <textarea name="notes" placeholder="Paste your study notes here..." required></textarea>
+            <br>
+            <button type="submit">Generate</button>
+        </form>
+
+        {% if response %}
+        <div class="output">
+            <h2>AI Response</h2>
+            <p>{{ response }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
